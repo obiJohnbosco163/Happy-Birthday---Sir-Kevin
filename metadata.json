@@ -2,5 +2,7 @@
   "name": "The Journey of a Builder — Okoye Kevin Chibuoyim",
   "description": "An interactive cinematic documentary and birthday tribute celebrating mentor, founder, and community architect Okoye Kevin Chibuoyim.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
