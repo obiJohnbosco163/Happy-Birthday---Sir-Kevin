@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/* Fonts setup */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-mono-tech {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom Cyberpunk & Neon styles from Itz-Murali Happy-BirthDay-Ai */
+:root {
+  --neon-cyan: #00e5ff;
+  --neon-gold: #f59e0b;
+  --neon-pink: #ff00cc;
+  --neon-blue: #0284c7;
+}
+
+/* Neon Start Button */
+.cyber-start-btn {
+  position: relative;
+  padding: 16px 40px;
+  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  background: rgba(4, 7, 20, 0.7);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cyber-start-btn:hover {
+  transform: scale(1.06);
+  border-color: #f59e0b;
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.7), inset 0 0 20px rgba(245, 158, 11, 0.4);
+  color: #fffae0;
+}
+
+/* Neon Lets Celebrate Button */
+.neon-celebrate-btn {
+  font-family: 'Orbitron', 'Cinzel', sans-serif;
+  padding: 14px 44px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid #ff00cc;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(14, 21, 44, 0.6);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff66ff;
+  box-shadow: 0 0 25px rgba(255, 0, 204, 0.45);
+  animation: glow-border 2.5s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.neon-celebrate-btn:hover {
+  transform: scale(1.1) skewX(-2deg);
+  border-color: #00e5ff;
+  background: linear-gradient(135deg, #ff00cc, #00e5ff);
+  color: #ffffff;
+  text-shadow: 0 0 12px #00e5ff, 0 0 25px #00e5ff;
+  box-shadow: 0 0 35px #ff00cc, 0 0 70px #00e5ff;
+}
+
+@keyframes glow-border {
+  from {
+    border-color: #ff00cc;
+    box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
+  }
+  to {
+    border-color: #00e5ff;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+  }
+}
+
+/* Fancy Glassmorphic Modal */
+.fancy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.fancy-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fancy-modal {
+  background: rgba(11, 18, 38, 0.95);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.25), 0 20px 40px rgba(0, 0, 0, 0.8);
+  border-radius: 28px;
+  padding: 36px 32px;
+  max-width: 580px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform: scale(0.92);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fancy-overlay.show .fancy-modal {
+  transform: scale(1);
+}
+
+/* Character typewriter span */
+.char {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.1s ease;
+}
+
+.char.show {
+  opacity: 1;
+}
+
+/* Glowing text helpers */
+.glow-text-gold {
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.5), 0 0 40px rgba(245, 158, 11, 0.25);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.3);
+}
+
+/* Floating heart outline */
+.heart-outline {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  stroke: #ff86b6;
+  fill: none;
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 10px #ff86b6aa);
+  opacity: 0.75;
+}
+
+/* Last Page */
+.lastpage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: radial-gradient(circle at 50% 20%, #0c1838 0%, #030712 80%);
+  z-index: 9999;
+  padding: 30px 16px 80px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
